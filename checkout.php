@@ -58,7 +58,7 @@ if (count($idList) > 0) {
                 <div class="col-12">
                     <div class="bread-inner">
                         <ul class="bread-list">
-                            <li><a href="index1.php">Home<i class="ti-arrow-right"></i></a></li>
+                            <li><a href="index.php">Home<i class="ti-arrow-right"></i></a></li>
                             <li class="active"><a href="blog-single.php">Checkout</a></li>
                         </ul>
                     </div>
@@ -147,11 +147,11 @@ if (count($idList) > 0) {
                             </div>
                             <!--/ End Order Widget -->
                             <!-- Payment Method Widget -->
-                            <div class="single-widget payement">
+                            <!-- <div class="single-widget payement">
                                 <div class="content">
                                     <img src="images/payment-method.png" alt="#">
                                 </div>
-                            </div>
+                            </div> -->
                             <!--/ End Payment Method Widget -->
                             <!-- Button Widget -->
                             <div class="single-widget get-button">

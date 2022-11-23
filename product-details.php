@@ -52,7 +52,7 @@ if ($product == null) {
                 <div class="product-dtl">
                     <div class="product-info">
                         <div class="product-name"><?= $product['ten_san'] ?></div>
-                        <div class="reviews-counter">
+                        <!-- <div class="reviews-counter">
                             <div class="rate">
                                 <input type="radio" id="star5" name="rate" value="5" checked />
                                 <label for="star5" title="text">5 stars</label>
@@ -66,26 +66,44 @@ if ($product == null) {
                                 <label for="star1" title="text">1 star</label>
                             </div>
                             
-                        </div>
+                        </div> -->
                         <div class="product-price-discount"><span style="color: #820813;"><?= $product['gia'] ?> đ</span><span style="color: #820813;" class="line-through"> - <?= $product['khuyen_mai'] ?> đ</span></div>
                     </div>
-                    <p style="text-align: justify;"><?= $product['mo_ta'] ?></p>
+                    <p style="text-align: justify;margin-bottom: 20px;"><?= $product['mo_ta'] ?></p>
                     <div class="product-count">
-                        <label for="size">Số lượng</label>
+                        <!-- <label for="size">Số lượng</label>
                         <form action="#" class="display-flex">
                             <a class="qtyminus">-</a>
                             <input type="text" name="quantity" value="1" class="qty">
                             <a class="qtyplus">+</a>
-                        </form>
-                        <div class="cart mt-4 align-items-center"> <button class="btn btn-danger text-uppercase mr-2 px-4" onclick="addToCart(<?= $id ?>)">Thêm vào giỏ hàng</button></div>
+                        </form> -->
+                        <a style="width: 100%;" href="add_to_card.php?id=<?php echo $product['id'] ?>"> <button style="background-color: #5a90e5;width: 38%;" type="button" class="btn btn-primary" >Thêm vào giỏ hàng</button></a>
+                        <!-- <div class="cart mt-4 align-items-center"> <button class="btn btn-danger text-uppercase mr-2 px-4" onclick="addToCart(<?= $id ?>)">Thêm vào giỏ hàng</button></div> -->
                     </div>
                 </div>
             </div>
-        </div>
-       
-           
+        </div>      
+    </div>
+    <div class="container" style="margin-bottom: 50px;">
+    <p style="font-size: 25px;font-weight: bold;font-family: 'Times New Roman', Times, serif;color: #c05353;margin-bottom: 20px;">CÁC SẢN PHẨM KHÁC</p>
+    <div class="row">
+                <div class="col-12">
+                    <div class="product-info">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="man" role="tabpanel">
+                                <div class="tab-single">
+                                    <div class="row">
+                                        <?php include('./component/new_product.php') ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </div>
     </div>
+    
     <script type="text/JavaScript">
         function addToCart(id) {
         $.post('./api/cookie.php', {

@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 require_once('utils/utility.php');
 require_once('db/dbhelper.php');
 
@@ -21,7 +21,7 @@ if (count($idList) > 0) {
     $cartList = [];
 }
 
-?>
+?> -->
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -60,7 +60,7 @@ if (count($idList) > 0) {
                     <div class="bread-inner">
                         <ul class="bread-list">
                             <li><a href="index.php">Home<i class="ti-arrow-right"></i></a></li>
-                            <li class="active"><a href="blog-single.php">Contact</a></li>
+                            <li class="active"><a href="contact.php">Contact</a></li>
                         </ul>
                     </div>
                 </div>
@@ -77,44 +77,44 @@ if (count($idList) > 0) {
                     <div class="col-lg-8 col-12">
                         <div class="form-main">
                             <div class="title">
-                                <h4>Get in touch</h4>
-                                <h3>Write us a message</h3>
+                                <h4>Liên hệ</h4>
+                                <h3>Nhập các thông tin liên hệ</h3>
                             </div>
-                            <form class="form" method="post" action="mail/mail.php">
+                            <form class="form" method="post" action="./component/process_lienhe.php">
                                 <div class="row">
                                     <div class="col-lg-6 col-12">
                                         <div class="form-group">
-                                            <label>Your Name<span>*</span></label>
+                                            <label>Họ và tên<span>*</span></label>
                                             <input name="name" type="text" placeholder="">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-12">
                                         <div class="form-group">
-                                            <label>Your Subjects<span>*</span></label>
-                                            <input name="subject" type="text" placeholder="">
+                                            <label>Địa chỉ<span>*</span></label>
+                                            <input name="address" type="text" placeholder="">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-12">
                                         <div class="form-group">
-                                            <label>Your Email<span>*</span></label>
+                                            <label>Email<span>*</span></label>
                                             <input name="email" type="email" placeholder="">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-12">
                                         <div class="form-group">
-                                            <label>Your Phone<span>*</span></label>
-                                            <input name="company_name" type="text" placeholder="">
+                                            <label>Số điện thoại<span>*</span></label>
+                                            <input name="phone_number" type="text" placeholder="">
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group message">
-                                            <label>your message<span>*</span></label>
+                                            <label>Nội dung liện hệ<span>*</span></label>
                                             <textarea name="message" placeholder=""></textarea>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group button">
-                                            <button type="submit" class="btn ">Send Message</button>
+                                            <button type="submit" class="btn ">Gửi</button>
                                         </div>
                                     </div>
                                 </div>

@@ -162,7 +162,7 @@ if (count($idList) > 0) {
                                     </div>';
                                 }
                                 ?>
-                                <a href="checkout.php" class="btn animate">Checkout</a>
+                                <a style="color: #ffff;" href="checkout.php" class="btn animate">Thanh Toán</a>
                             </div>
                             <!--/ End Shopping Item -->
                         </div>
@@ -175,14 +175,17 @@ if (count($idList) > 0) {
     <div class="header-inner" style="background-color: #ffff;margin-bottom: 30px;">
         <div class="container">
             <div class="cat-nav-head">
-                <div class="row">
-                    <div class="col-12">
+                <!-- <div class="row">
+                    <div class="col-12"> -->
                         <div class="menu-area">
                             <!-- Main Menu -->
                             <nav class="navbar navbar-expand-lg">
                                 <div class="navbar-collapse">
-                                    <div class="nav-inner">
-                                        <ul class="nav main-menu menu navbar-nav" style="margin-left: 310px;">
+                                    <div class="nav-inner" style="width: 100%;">
+                                        <ul class="nav main-menu menu navbar-nav" style="display: flex;
+                                                                                        align-items: center;
+                                                                                        justify-content: center;
+                                                                                        width: 100%;">
                                             <li><a style="color:gray ;" href="index.php">Trang Chủ</a></li>
                                             <li><a style="color:gray ;" href="#">Sản Phẩm<i class="ti-angle-down"></i></a>
                                                 <ul class="dropdown">
@@ -203,8 +206,8 @@ if (count($idList) > 0) {
                             </nav>
                             <!--/ End Main Menu -->
                         </div>
-                    </div>
-                </div>
+                    <!-- </div>
+                </div> -->
             </div>
         </div>
     </div>

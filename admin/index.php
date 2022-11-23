@@ -29,6 +29,17 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
@@ -40,27 +51,25 @@
             </div>
         </div>
         <!-- Spinner End -->
-
-
         <!-- Sign Up Start -->
         <div class="container-fluid">
             <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
                 <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
-                    <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">    
+                    <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">
                         <h3 style="text-align: center;">Đăng Nhập</h3>
                         <form method="POST" action="process_loginadmin.php">
-                    <div class="form-group">
-                        <label style="font-size: 18px;font-family: 'Times New Roman', Times, serif;margin-bottom: 20px;">Email:</label>
-                        <input style="height: 40px;width: 100%;font-size: 14px" type="email" class="form-control" name="email" placeholder="Nhập email...">
-                    </div>
-                    <br>
-                    <div class="form-group">
-                        <label style="font-size: 18px;font-family: 'Times New Roman', Times, serif;margin-bottom: 20px;">Mật khẩu:</label>
-                        <input style="height: 40px;width: 100%;font-size: 14px" type="password" class="form-control" name="password" placeholder="Nhập mật khẩu...">
-                    </div>
-                    <br>
-                    <button style="height: 50px;border-radius: 5px;background-color: #5a90e5;color: #ffff;width: 80%;margin-left: 32px;" class="btn btn-default">Đăng Nhập</button>
-                </form>
+                            <div class="form-group">
+                                <label style="font-size: 18px;font-family: 'Times New Roman', Times, serif;margin-bottom: 20px;">Email:</label>
+                                <input style="height: 40px;width: 100%;font-size: 14px" type="email" class="form-control" name="email" placeholder="Nhập email...">
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label style="font-size: 18px;font-family: 'Times New Roman', Times, serif;margin-bottom: 20px;">Mật khẩu:</label>
+                                <input style="height: 40px;width: 100%;font-size: 14px" type="password" class="form-control" name="password" placeholder="Nhập mật khẩu...">
+                            </div>
+                            <br>
+                            <button style="height: 50px;border-radius: 5px;background-color: #5a90e5;color: #ffff;width: 80%;margin-left: 35px;" class="btn btn-default">Đăng Nhập</button>
+                        </form>
                     </div>
                 </div>
             </div>

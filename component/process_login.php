@@ -30,7 +30,6 @@ if($number_row==1)
         $token=uniqid('user_',true);
         $sql="update users set token='$token' where id='$id'";
         mysqli_query($connect,$sql);
-        echo $token;
         setcookie('remember',$token,time()+60*60*24*30);         
     }
     header('location:../index.php');

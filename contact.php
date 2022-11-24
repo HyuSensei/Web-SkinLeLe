@@ -1,27 +1,3 @@
-<!-- <?php
-require_once('utils/utility.php');
-require_once('db/dbhelper.php');
-
-$cart = [];
-if (isset($_COOKIE['cart'])) {
-    $json = $_COOKIE['cart'];
-    $cart = json_decode($json, true);
-}
-$idList = [];
-foreach ($cart as $item) {
-    $idList[] = $item['id'];
-}
-if (count($idList) > 0) {
-    $idList = implode(',', $idList);
-
-
-    $sql = "select * from san_pham where id in ($idList) ";
-    $cartList = executeResult($sql);
-} else {
-    $cartList = [];
-}
-
-?> -->
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -60,7 +36,7 @@ if (count($idList) > 0) {
                     <div class="bread-inner">
                         <ul class="bread-list">
                             <li><a href="index.php">Home<i class="ti-arrow-right"></i></a></li>
-                            <li class="active"><a href="contact.php">Contact</a></li>
+                            <li class="active"><a href="">Contact</a></li>
                         </ul>
                     </div>
                 </div>

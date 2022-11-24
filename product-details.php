@@ -46,7 +46,6 @@ if ($product == null) {
                         <img width="85%" style="margin-bottom: 40px;" src="<?= $product['anh'] ?>" />
                     </div>
                 </div>
-
             </div>
             <div class="col-md-6">
                 <div class="product-dtl">
@@ -77,7 +76,7 @@ if ($product == null) {
                             <input type="text" name="quantity" value="1" class="qty">
                             <a class="qtyplus">+</a>
                         </form> -->
-                        <a style="width: 100%;" href="add_to_card.php?id=<?php echo $product['id'] ?>"> <button style="background-color: #5a90e5;width: 38%;" type="button" class="btn btn-primary" >Thêm vào giỏ hàng</button></a>
+                        <a style="width: 100%;" href="component/add_to_cart_detail.php?id=<?php echo $product['id'] ?>"> <button style="background-color: #5a90e5;width: 38%;" type="button" class="btn btn-primary" >Thêm vào giỏ hàng</button></a>
                         <!-- <div class="cart mt-4 align-items-center"> <button class="btn btn-danger text-uppercase mr-2 px-4" onclick="addToCart(<?= $id ?>)">Thêm vào giỏ hàng</button></div> -->
                     </div>
                 </div>
@@ -104,7 +103,7 @@ if ($product == null) {
     </div>
     </div>
     
-    <script type="text/JavaScript">
+    <!-- <script type="text/JavaScript">
         function addToCart(id) {
         $.post('./api/cookie.php', {
             'action' : 'add',
@@ -113,7 +112,7 @@ if ($product == null) {
         }, function(data) {
             location.reload()
         })
-    }
+    } -->
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

@@ -30,7 +30,7 @@
                     <div class="bread-inner">
                         <ul class="bread-list">
                             <li><a href="index.php">Home<i class="ti-arrow-right"></i></a></li>
-                            <li class="active"><a href="blog-single.php">Cart</a></li>
+                            <li class="active"><a href="">Giỏ hàng</a></li>
                         </ul>
                     </div>
                 </div>
@@ -56,43 +56,56 @@
                                     <p><?php echo $each['ten_san'] ?></p>
                                 </td>
                                 <td>
-                                       <p style="color: #820813;"><?php echo $each['gia'] ?>đ</p>
+                                    <p style="color: #820813;"><?php echo $each['gia'] ?>đ</p>
                                 </td>
                                 <td>
-                                    <a href="update_quantity_in_cart.php?id=<?php echo $id ?>&type=giam">
+                                    <a href="./component/update_quantity_in_cart.php?id=<?php echo $id ?>&type=giam">
                                         -
                                     </a>
                                     <?php echo $each['so_luong'] ?>
-                                    <a href="update_quantity_in_cart.php?id=<?php echo $id ?>&type=tang">
+                                    <a href="./component/update_quantity_in_cart.php?id=<?php echo $id ?>&type=tang">
                                         +
                                     </a>
                                 </td>
                                 <td>
-                                        <p style="color: #820813;">
+                                    <p style="color: #820813;">
                                         <?php
                                         $sum = $each['gia'] * $each['so_luong'];
                                         $total += $sum;
-                                        echo $sum.'đ';
+                                        echo $sum . 'đ';
                                         ?>
-                                        </p>
+                                    </p>
                                 </td>
                                 <td>
-                                    <a href="delete_cart.php?id=<?php echo $id ?>">
-                                        X
+                                    <a href="./component/delete_cart.php?id=<?php echo $id ?>">
+                                        Xóa
                                     </a>
                                 </td>
                             </tr>
-                          
                         <?php endforeach ?>
                     </tbody>
                 </table>
             </div>
-            <h1 style="margin-top: 20px;font-family: 'Times New Roman', Times, serif;">
-                Tổng tiền:
-                    <?php echo $total ?>
-                đ
+            <h1 style="margin-top: 20px;font-family: 'Times New Roman', Times, serif;display: flex;">
+                <p style="color: #820813;">Tổng tiền: <?php echo $total ?>đ</p>
             </h1>
             <br>
+        </div>
+        <div class="container">
+            <form method="POST" action="./component/process_order.php">
+                <div class="form-group">
+                    <label style="font-size: 18px;font-family: 'Times New Roman', Times, serif;">Họ tên người nhận</label>
+                    <input style="font-size: 14px;width: 60%;font-family: 'Times New Roman', Times, serif;" type="text" class="form-control" placeholder="Nhập họ tên" name="name_receiver">
+                </div>
+                <div class="form-group">
+                    <label style="font-size: 18px;font-family: 'Times New Roman', Times, serif;">Số điện thoại người nhận</label>
+                    <input style="font-size: 14px;width: 60%;" type="text" class="form-control" name="phone_number_receiver" placeholder="Nhập số điện thoại">
+                </div>
+                <div class="form-group">
+                    <label style="font-size: 18px;font-family: 'Times New Roman', Times, serif;">Địa chỉ</label>
+                    <input style="font-size: 14px;width: 60%;" type="text" class="form-control" placeholder="Nhập đại chỉ" name="address_receiver">
+                </div>
+                <button class="btn btn-success">Đặt Hàng</button>
         </div>
     </div>
     <!-- Start Shop Services Area  -->

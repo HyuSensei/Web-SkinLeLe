@@ -14,7 +14,7 @@ $result1 = mysqli_query($connect, $sql1);
                 <?php if (!empty($_SESSION['id'])) { ?>
                     <div class="button-head">
                         <div style="width: 100%; height: 48px;" class="product-action-2">
-                        <a style="width: 100%;" href=""> <button style="background-color: #5a90e5;width: 100%;" type="button" class="btn btn-primary" >Thêm vào giỏ hàng</button></a>
+                        <a style="width: 100%;" href="component/add_to_cart.php?id=<?php echo $value['id'] ?>"> <button style="background-color: #5a90e5;width: 100%;" type="button" class="btn btn-primary" >Thêm vào giỏ hàng</button></a>
                         </div>
                     </div>
                 <?php } ?>

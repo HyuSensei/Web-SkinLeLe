@@ -7,7 +7,7 @@
     }
     if(empty($_SESSION['cart'][$id]))
     {
-        require_once('db/connect.php');
+        require_once('../db/connect.php');
         $sql="select * from san_pham where id='$id'";
         $result=mysqli_query($connect,$sql);
         $each=mysqli_fetch_array($result);
@@ -19,6 +19,6 @@
     }else{
         $_SESSION['cart'][$id]['so_luong']++;
     }
-    header('location:index.php');
+    header('location:../product_1.php');
     exit();
  ?>

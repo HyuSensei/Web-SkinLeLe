@@ -27,8 +27,6 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 
@@ -40,6 +38,10 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -51,6 +53,8 @@
             </div>
         </div>
         <!-- Spinner End -->
+
+
         <!-- Sign Up Start -->
         <div class="container-fluid">
             <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
@@ -68,7 +72,7 @@
                                 <input style="height: 40px;width: 100%;font-size: 14px" type="password" class="form-control" name="password" placeholder="Nhập mật khẩu...">
                             </div>
                             <br>
-                            <button style="height: 50px;border-radius: 5px;background-color: #5a90e5;color: #ffff;width: 80%;margin-left: 35px;" class="btn btn-default">Đăng Nhập</button>
+                            <button style="height: 50px;border-radius: 5px;background-color: #5a90e5;color: #ffff;width: 80%;margin-left: 32px;" class="btn btn-default">Đăng Nhập</button>
                         </form>
                     </div>
                 </div>

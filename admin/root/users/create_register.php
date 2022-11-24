@@ -3,68 +3,73 @@
 require_once "../../../db/config.php";
 
 // Define variables and initialize with empty values
-$fullname = $email = $phone_number = $address = "";
-$fullname_err = $email_err = $phone_number_err = $address_err = "";
+$name = $email = $password = $phone_number = $address = "";
+$name_err = $email_err = $password_err = $phone_number_err = $address_err = "";
 
 // Processing form data when form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Validate fullname
-    $input_fullname = trim($_POST["fullname"]);
-    if (empty($input_fullname)) {
-        $fullname_err = "Please enter a title.";
-    } elseif (!filter_var($input_fullname, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => "/^[a-zA-Z\s]+$/")))) {
-        $fullname_err = "Please enter a valid title.";
+    // Validate name
+    $input_name = trim($_POST["name"]);
+    if (empty($input_name)) {
+        $name_err = "Please enter the name .";
     } else {
-        $title = $input_fullname;
-    }
-
-    // Validate phone
-    $input_phone_number = trim($_POST["phone_number"]);
-    if (empty($input_phone_number)) {
-        $phone_err = "Please enter the price amount.";
-    } elseif (!ctype_digit($input_phone_number)) {
-        $phone_err = "Please enter a positive integer value.";
-    } else {
-        $phone_number = $input_phone_number;
+        $name = $input_name;
     }
 
     // Validate email
     $input_email = trim($_POST["email"]);
     if (empty($input_email)) {
-        $email_err = "Please enter an thumbnail.";
+        $email_err = "Please enter an email.";
     } else {
         $email = $input_email;
     }
 
     // Validate password
+    $input_password = trim($_POST["password"]);
+    if (empty($input_password)) {
+        $password_err = "Please enter the content amount.";
+    } else {
+        $password = $input_password;
+    }
+
+    // Validate phone_number
+    $input_phone_number = trim($_POST["phone_number"]);
+    if (empty($input_phone_number)) {
+        $phone_number_err = "Please enter the price amount.";
+    } elseif (!ctype_digit($input_phone_number)) {
+        $phone_number_err = "Please enter a positive integer value.";
+    } else {
+        $phone_number = $input_phone_number;
+    }
+
+    // Validate password
     $input_address = trim($_POST["address"]);
     if (empty($input_address)) {
-        $psw_err = "Please enter the content amount.";
+        $address_err = "Please enter the content amount.";
     } else {
         $address = $input_address;
     }
 
-
-
     // Check input errors before inserting in database
-    if (empty($fullname_err) && empty($email_err) && empty($address_err) && empty($phone_number_err)) {
+    if (empty($name_err) && empty($email_err) && empty($password_err) && empty($phone_number_err) && empty($address_err)) {
         // Prepare an insert statement
-        $sql = "INSERT INTO orders (fullname,phone_number, email, address) VALUES (?, ?, ?, ?)";
+        $sql = "INSERT INTO users (name, email, phone_number ,address, password) VALUES (?, ?, ?, ?, ?)";
 
         if ($stmt = mysqli_prepare($link, $sql)) {
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ssss", $param_fullname, $param_phone_number, $param_email, $param_address);
+            mysqli_stmt_bind_param($stmt, "sssss", $param_name, $param_email, $param_phone_number, $param_address, $param_password);
 
             // Set parameters
-            $param_fullname = $fullname;
+            $param_name = $name;
             $param_email = $email;
-            $param_address = $address;
             $param_phone_number = $phone_number;
+            $param_address = $address;
+            $param_password = $password;
 
             // Attempt to execute the prepared statement
             if (mysqli_stmt_execute($stmt)) {
                 // Records created successfully. Redirect to landing page
-                header("location: index_order.php");
+                header("location: ../../../admin/root/tableSign.php");
                 exit();
             } else {
                 echo "Oops! Something went wrong. Please try again later.";
@@ -104,14 +109,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <p>Please fill this form and submit to add employee record to the database.</p>
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                         <div class="form-group">
-                            <label>fullname</label>
-                            <input type="text" title="fullname" name="fullname" class="form-control <?php echo (!empty($fullname_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $fullname; ?>">
-                            <span class="invalid-feedback"><?php echo $fullname_err; ?></span>
-                        </div>
-                        <div class="form-group">
-                            <label>phone_number</label>
-                            <input type="text" title="phone_number" name="phone_number" class="form-control <?php echo (!empty($phone_number_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $phone_number; ?>">
-                            <span class="invalid-feedback"><?php echo $phone_number_err; ?></span>
+                            <label>name</label>
+                            <input type="text" title="name" name="name" class="form-control <?php echo (!empty($name_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $name; ?>">
+                            <span class="invalid-feedback"><?php echo $name_err; ?></span>
                         </div>
                         <div class="form-group">
                             <label>email</label>
@@ -119,12 +119,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <span class="invalid-feedback"><?php echo $email_err; ?></span>
                         </div>
                         <div class="form-group">
+                            <label>password</label>
+                            <input type="password" title="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
+                            <span class="invalid-feedback"><?php echo $password_err; ?></span>
+                        </div>
+                        <div class="form-group">
+                            <label>phone_number</label>
+                            <input type="text" title="phone_number" name="phone_number" class="form-control <?php echo (!empty($phone_number_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $phone_number; ?>">
+                            <span class="invalid-feedback"><?php echo $phone_number_err; ?></span>
+                        </div>
+                        <div class="form-group">
                             <label>address</label>
                             <input type="text" title="address" name="address" class="form-control <?php echo (!empty($address_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $address; ?>">
                             <span class="invalid-feedback"><?php echo $address_err; ?></span>
                         </div>
                         <input type="submit" class="btn btn-primary" value="Submit">
-                        <a href="index_register.php" class="btn btn-secondary ml-2">Cancel</a>
+                        <a href="../../../admin/root/tableSign.php" class="btn btn-secondary ml-2">Cancel</a>
                     </form>
                 </div>
             </div>

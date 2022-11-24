@@ -2,10 +2,10 @@
 // Check existence of id parameter before processing further
 if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
     // Include config file
-    require_once "../../db/config.php";
+    require_once "../db/config.php";
 
     // Prepare a select statement
-    $sql = "SELECT * FROM products WHERE id = ?";
+    $sql = "SELECT * FROM san_pham WHERE id = ?";
 
     if ($stmt = mysqli_prepare($link, $sql)) {
         // Bind variables to the prepared statement as parameters
@@ -72,22 +72,26 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
                 <div class="col-md-12">
                     <h1 class="mt-5 mb-3">View Record</h1>
                     <div class="form-group">
-                        <label>Title</label>
-                        <p><b><?php echo $row["title"]; ?></b></p>
+                        <label>Tên Sản Phẩm</label>
+                        <p><b><?php echo $row["ten_san"]; ?></b></p>
                     </div>
                     <div class="form-group">
-                        <label>Thumbnail</label>
-                        <p><b><?php echo $row["thumbnail"]; ?></b></p>
+                        <label>Mô Tả </label>
+                        <p><b><?php echo $row["mo_ta"]; ?></b></p>
                     </div>
                     <div class="form-group">
-                        <label>Content</label>
-                        <p><b><?php echo $row["content"]; ?></b></p>
+                        <label>Giá</label>
+                        <p><b><?php echo $row["gia"]; ?></b></p>
                     </div>
                     <div class="form-group">
-                        <label>Price</label>
-                        <p><b><?php echo $row["price"]; ?></b></p>
+                        <label>Khuyến Mãi</label>
+                        <p><b><?php echo $row["khuyen_mai"]; ?></b></p>
                     </div>
-                    <p><a href="index_crud.php" class="btn btn-primary">Back</a></p>
+                    <div class="form-group">
+                        <label>Danh Mục</label>
+                        <p><b><?php echo $row["danh_muc"]; ?></b></p>
+                    </div>
+                    <p><a href="../productTable.php" class="btn btn-primary">Back</a></p>
                 </div>
             </div>
         </div>

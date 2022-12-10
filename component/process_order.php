@@ -20,7 +20,6 @@ foreach($cart as $each){
 }
 $customer_id = $_SESSION['id'];
 $status = 0;
-
 $sql = "insert into orders(customer_id, name_receiver, phone_receiver, address_receiver, status, total_price)
 values ('$customer_id', '$name_receiver', '$phone_number_receiver', '$address_receiver', '$status', '$total_price')";
 mysqli_query($connect,$sql);

@@ -1,5 +1,5 @@
-<?php 
-
+<?php
+session_start();
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -10,7 +10,7 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
 $vnp_TmnCode = "9R6CA62A"; //Website ID in VNPAY System
 $vnp_HashSecret = "MFBXWWHMXHJJAFIZSBHEHZIGHWKXVTLM"; //Secret key
 $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-$vnp_Returnurl = "http://localhost/Bao_Cao_Web_Nang_Cao-NXD/complete.php";
+$vnp_Returnurl = "http://localhost/Bao_Cao_Web_Nang_Cao-NXD/vnpay_return.php";
 $vnp_apiUrl = "http://sandbox.vnpayment.vn/merchant_webapi/merchant.html";
 //Config input format
 //Expire
@@ -18,10 +18,20 @@ $startTime = date("YmdHis");
 $expire = date('YmdHis',strtotime('+15 minutes',strtotime($startTime)));
 $code_order = rand(0, 9999);
 
+$cart = "";
+$total = 0;
+if (isset($_SESSION['cart'])) {
+    $cart = $_SESSION['cart'];
+}
+if (is_array($cart) || is_object($cart))
+    foreach ($cart as $id => $each):
+        $sum = $each['gia'] * $each['so_luong'];
+        $total += $sum;
+    endforeach;
 $vnp_TxnRef = $code_order; //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
-$vnp_OrderInfo = 'Thanh toán đơn hàng tại website';
+$vnp_OrderInfo = 'Thanh toán đơn hàng tại Website';
 $vnp_OrderType = 'billpayment';
-$vnp_Amount = 10000 * 100;
+$vnp_Amount = $total*100;
 $vnp_Locale = 'vn';
 $vnp_BankCode = $_POST['bank_code'];
 $vnp_IpAddr = $_SERVER['REMOTE_ADDR'];
@@ -74,9 +84,22 @@ $returnData = array('code' => '00'
     , 'message' => 'success'
     , 'data' => $vnp_Url);
     if (isset($_POST['redirect'])) {
+    $_SESSION['code_cart'] = $code_order;
         header('Location: ' . $vnp_Url);
         die();
     } else {
         echo json_encode($returnData);
     }
-
+    $name_receiver=$phone_number_receiver=$address_receiver="";
+    if(isset($_POST['name_receiver'])){
+        $name_receive=$_POST['name_receiver'];
+        $_SESSION['name_receiver'] = $name_receive;
+    }
+    if(isset($_POST['phone_number_receiver'])){
+        $phone_number_receiver=$_POST['phone_number_receiver'];
+        $_SESSION['phone_number_receiver'] = $phone_number_receiver;
+    }
+    if(isset($_POST['address_receiver'])){
+        $address_receiver=$_POST['address_receiver'];
+        $_SESSION['address_receiver'] = $address_receiver;
+    }

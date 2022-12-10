@@ -107,7 +107,7 @@
                 </div>
                 <button class="btn btn-success">Đặt Hàng</button>
             </form>
-            <button style="margin-top: -74px;margin-left: 170px;" class="btn btn-success"><a href="checkout.php">Thanh Toán</a></button>
+            <a href="checkout.php"><button style="margin-top: -74px;margin-left: 170px;" class="btn btn-success">Thanh Toán</button></a>
         </div>
     </div>
     <!-- Start Shop Services Area  -->

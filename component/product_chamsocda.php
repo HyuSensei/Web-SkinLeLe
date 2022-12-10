@@ -16,13 +16,13 @@ if(isset($_GET['trang'])){
 }
 $bo_qua=$so_san_pham_mot_trang*($trang-1);
 
-// $sql = "select * from san_pham where danh_muc=N'Chăm Sóc Da' limit $so_san_pham_mot_trang offset $bo_qua";
+//l $sql = "seect * from san_pham where danh_muc=N'Chăm Sóc Da' limit $so_san_pham_mot_trang offset $bo_qua";
 // $result = mysqli_query($connect, $sql);
 $start = $end = "";
 if (isset($_POST['start']) && isset($_POST['end'])) {
     $start = $_POST['start'];
     $end = $_POST['end'];
-    $sql = "select * from san_pham where danh_muc=N'Chăm Sóc Da' and gia >=$start and gia<=$end";
+    $sql = "select * from san_pham where danh_muc=N'Chăm Sóc Da' and gia >=$start and gia<=$end ";
 } else {
     $sql = "select * from san_pham where danh_muc=N'Chăm Sóc Da' limit $so_san_pham_mot_trang offset $bo_qua";
     // $result = mysqli_query($connect, $sql);

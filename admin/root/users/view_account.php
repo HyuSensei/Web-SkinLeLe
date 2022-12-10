@@ -35,22 +35,22 @@ $result = mysqli_query($connect, $sql);
                         <?php echo $value['phone_number'] ?>
                     </td>
                     <td>
-                        <p><?php echo $value['address'] ?>đ</p>
+                        <p><?php echo $value['address'] ?></p>
                     </td>
                     <td>
-                        <p><?php echo $value['password'] ?>đ</p>
+                        <p><?php echo $value['password'] ?></p>
                     </td>
                     <td>
-                        <p><?php echo $value['token'] ?>đ</p>
+                        <p><?php echo $value['token'] ?></p>
                     </td>
                     <!-- <td>
                         <a href="../../../admin/root/orders/read_orders.php?id=<?php echo $value['id'] ?>"><span class="fa fa-eye"></span></a>
                     </td> -->
                     <td>
-                        <a href="../../../admin/root/users/update_register.php?id=<?php echo $value['id'] ?>"><span class="fa fa-pencil" style="color: #e28585;"></a>
+                        <a href="./admin/root/users/update_register.php?id=<?php echo $value['id'] ?>"><span class="fa fa-pencil" style="color: #e28585;"></a>
                     </td>
                     <td>
-                        <a href="../../../admin/root/users/delete_register.php?id=<?php echo $value['id'] ?>"><span class="fa fa-trash" style="color: #e28585;"></span></a>
+                        <a href="./admin/root/users/delete_register.php?id=<?php echo $value['id'] ?>"><span class="fa fa-trash" style="color: #e28585;"></span></a>
                     </td>
                 </tr>
             <?php endforeach ?>

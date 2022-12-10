@@ -93,19 +93,21 @@
         </div>
         <div class="container">
             <form method="POST" action="./component/process_order.php">
-                <div class="form-group">
-                    <label style="font-size: 18px;font-family: 'Times New Roman', Times, serif;">Họ tên người nhận</label>
-                    <input style="font-size: 14px;width: 60%;font-family: 'Times New Roman', Times, serif;" type="text" class="form-control" placeholder="Nhập họ tên" name="name_receiver">
+            <div class="form-group">
+                    <label style="font-size: 18px;font-family: 'Times New Roman', Times, serif;">HỌ VÀ TÊN NGƯỜI NHẬN</label>
+                    <input style="font-size: 14px;width: 60%;" type="text" class="form-control" placeholder="Nhập họ tên" name="name_receiver">
                 </div>
                 <div class="form-group">
-                    <label style="font-size: 18px;font-family: 'Times New Roman', Times, serif;">Số điện thoại người nhận</label>
+                    <label style="font-size: 18px;font-family: 'Times New Roman', Times, serif;">SỐ ĐIỆN THOẠI</label>
                     <input style="font-size: 14px;width: 60%;" type="text" class="form-control" name="phone_number_receiver" placeholder="Nhập số điện thoại">
                 </div>
                 <div class="form-group">
-                    <label style="font-size: 18px;font-family: 'Times New Roman', Times, serif;">Địa chỉ</label>
-                    <input style="font-size: 14px;width: 60%;" type="text" class="form-control" placeholder="Nhập đại chỉ" name="address_receiver">
+                    <label style="font-size: 18px;font-family: 'Times New Roman', Times, serif;">ĐỊA CHỈ NHẬN HÀNG</label>
+                    <input style="font-size: 14px;width: 60%;" type="text" class="form-control" placeholder="Nhập địa chỉ" name="address_receiver">
                 </div>
                 <button class="btn btn-success">Đặt Hàng</button>
+            </form>
+            <button style="margin-top: -74px;margin-left: 170px;" class="btn btn-success"><a href="checkout.php">Thanh Toán</a></button>
         </div>
     </div>
     <!-- Start Shop Services Area  -->

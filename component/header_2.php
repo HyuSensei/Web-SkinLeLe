@@ -57,24 +57,23 @@ session_start();
                     <div class="logo">
                         <a href="index.php"><img src="./images/logoo.png" alt="logo" style="max-width: 60%;"></a>
                     </div>
+                    <div class="mobile-nav"></div>
                     <!--/ End Logo -->
-                    <!-- Search Form -->
-                    <div class="search-top">
+
+                    <!-- <div class="search-top">
                         <div class="top-search"><a href="#0"><i class="ti-search"></i></a></div>
-                        <!-- Search Form -->
+                        
                         <div class="search-top">
                             <form class="search-form">
                                 <input type="text" placeholder="Nhập..." name="search" id="live_search">
-                                <!-- <div id="search_result">
-
-                                </div> -->
+                                
                                 <button value="search" type="submit"><i class="ti-search"></i></button>
                             </form>
                         </div>
-                        <!--/ End Search Form -->
+                        
                     </div>
-                    <!--/ End Search Form -->
-                    <div class="mobile-nav"></div>
+                    
+                    <div class="mobile-nav"></div> -->
                 </div>
                 <div class="col-lg-8 col-md-7 col-12" style="margin-top: 40px;">
                     <div class="search-bar-top">
@@ -82,11 +81,9 @@ session_start();
                             <select>
                                 <option selected="selected">All</option>
                             </select>
-                            <form>
-                                <input name="search" placeholder="Nhập thông tin tìm kiếm..." type="search" id="search">
-                                <!-- <button class="btnn"><i class="ti-search"></i></button> -->
-                            </form>
-                            <div id="output"></div>
+                                <input name="live_search" id="live_search" autocomplete="off" placeholder="Nhập thông tin tìm kiếm..." type="text">
+                              
+                            <div class="shopping-item" style="margin-top: 10px;width: 610px;position: absolute;z-index: 100;background-color: #fff;" id="search_result"></div>
                         </div>
                     </div>
                 </div>
@@ -103,24 +100,24 @@ session_start();
                             <?php
                             if (isset($_SESSION['cart'])) {
                                 $cart = $_SESSION['cart'];
-                                $num= count($cart);
-                            }else{
-                                $num=0;
+                                $num = count($cart);
+                            } else {
+                                $num = 0;
                             }
                             ?>
                             <a href="view_cart.php" class="single-icon"><i class="ti-bag"></i> <span class="total-count"><?php echo $num ?></span></a>
                             <!-- Shopping Item -->
                             <div class="shopping-item">
-                            <?php if (isset($_SESSION['cart'])) {
-                                 if (is_array($cart) || is_object($cart)) foreach ($cart as $id => $each) : ?>
-                                    <ul class="shopping-list">
-                                        <li style="display: flex;">
-                                            <div style="width: 100px;margin-right: 20px;">
-                                                <img src="<?php echo $each['anh'] ?>" width="100px" alt="">
-                                                <p style="color: #74140d"><?php echo $each['gia'] ?>đ</p>
-                                            </div>
-                                            <div>
-                                                <p style="display: -webkit-box;
+                                <?php if (isset($_SESSION['cart'])) {
+                                    if (is_array($cart) || is_object($cart)) foreach ($cart as $id => $each) : ?>
+                                        <ul class="shopping-list">
+                                            <li style="display: flex;">
+                                                <div style="width: 100px;margin-right: 20px;">
+                                                    <img src="<?php echo $each['anh'] ?>" width="100px" alt="">
+                                                    <p style="color: #74140d;"><?php echo $each['gia'] ?>đ</p>
+                                                </div>
+                                                <div>
+                                                    <p style="display: -webkit-box;
                                                         max-height: 3.2rem;
                                                     -webkit-box-orient: vertical;
                                                         overflow: hidden;
@@ -129,61 +126,62 @@ session_start();
                                                         -webkit-line-clamp: 2;
                                                         line-height: 1.6rem;
                                                         margin-top: 10px;
-                                                        font-size: 12px;"><?php echo $each['ten_san']?></p>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                <?php endforeach ?>
-                                <?php }?>
+                                                        font-size: 12px;"><?php echo $each['ten_san'] ?></p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    <?php endforeach ?>
+                                <?php } ?>
                                 <a style="color: #ffff;" href="view_cart.php" class="btn animate">Đặt hàng</a>
                             </div>
                             <!--/ End Shopping Item -->
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
     <!-- Header Inner -->
-    <div class="header-inner" style="background-color: #ffff;margin-bottom: 30px;">
-        <div class="container">
-            <div class="cat-nav-head">
-                <!-- <div class="row">
+   
+        <div class="header-inner" style="background-color: #ffff;margin-bottom: 30px;">
+            <div class="container">
+                <div class="cat-nav-head">
+                    <!-- <div class="row">
                     <div class="col-12"> -->
-                <div class="menu-area">
-                    <!-- Main Menu -->
-                    <nav class="navbar navbar-expand-lg">
-                        <div class="navbar-collapse">
-                            <div class="nav-inner" style="width: 100%;">
-                                <ul class="nav main-menu menu navbar-nav" style="display: flex;
+                    <div class="menu-area">
+                        <!-- Main Menu -->
+                        <nav class="navbar navbar-expand-lg">
+                            <div class="navbar-collapse">
+                                <div class="nav-inner" style="width: 100%;">
+                                    <ul class="nav main-menu menu navbar-nav" style="display: flex;
                                                                                         align-items: center;
                                                                                         justify-content: center;
                                                                                         width: 100%;">
-                                    <li><a style="color:gray ;" href="index.php">Trang Chủ</a></li>
-                                    <li><a style="color:gray ;" href="#">Sản Phẩm<i class="ti-angle-down"></i></a>
-                                        <ul class="dropdown">
-                                            <li><a style="color:gray ;" href="product_1.php">Chăm Sóc Da</a></li>
-                                            <li><a style="color:gray ;" href="product_2.php">Trang Điểm</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a style="color:gray ;" href="#">Cửa Hàng<i class="ti-angle-down"></i><span class="new">New</span></a>
-                                        <ul class="dropdown">
-                                            <li><a style="color:gray ;" href="view_cart.php">Giỏ Hàng</a></li>
-                                            <li><a style="color:gray ;" href="">Thanh Toán</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a style="color:gray ;" href="contact.php">Liên Hệ</a></li>
-                                </ul>
+                                        <li><a style="color:gray ;" href="index.php">Trang Chủ</a></li>
+                                        <li><a style="color:gray ;" href="#">Sản Phẩm<i class="ti-angle-down"></i></a>
+                                            <ul class="dropdown">
+                                                <li><a style="color:gray ;" href="product_1.php">Chăm Sóc Da</a></li>
+                                                <li><a style="color:gray ;" href="product_2.php">Trang Điểm</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a style="color:gray ;" href="#">Cửa Hàng<i class="ti-angle-down"></i><span class="new">New</span></a>
+                                            <ul class="dropdown">
+                                                <li><a style="color:gray ;" href="view_cart.php">Giỏ Hàng</a></li>
+                                                <li><a style="color:gray ;" href="">Thanh Toán</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a style="color:gray ;" href="contact.php">Liên Hệ</a></li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                    </nav>
-                    <!--/ End Main Menu -->
-                </div>
-                <!-- </div>
+                        </nav>
+                        <!--/ End Main Menu -->
+                    </div>
+                    <!-- </div>
                 </div> -->
+                </div>
             </div>
         </div>
-    </div>
     <!--/ End Header Inner -->
 </header>
-

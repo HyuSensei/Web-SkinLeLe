@@ -94,7 +94,7 @@
             <div class="form-group">
 
                 <label>Số tiền:</label>
-                <label><?php echo $_GET['vnp_Amount'] ?></label>
+                <label><?php echo $_GET['vnp_Amount']/100 ?></label>
             </div>
             <div class="form-group">
                 <label>Nội dung thanh toán:</label>
@@ -119,22 +119,6 @@
                     if ($secureHash == $vnp_SecureHash) {
                         if ($_GET['vnp_ResponseCode'] == '00') {
                             echo "<span style='color:blue'>Thanh Toán Thành Công</span>";
-                            // $customer_id = $_SESSION['id'];
-                            // $sql = "insert into orders(customer_id, name_receiver, phone_receiver, address_receiver, status, total_price)
-                            // values ('$customer_id', '$name_receiver', '$phone_number_receiver', '$address_receiver', '$status', '$total_price')";
-                            // mysqli_query($connect, $sql);
-                            // $sql = "select max(id) from orders where customer_id = '$customer_id'";
-                            // $result = mysqli_query($connect, $sql);
-                            // $order_id = mysqli_fetch_array($result)['max(id)'];
-                            // foreach ($cart as $product_id => $each) {
-                            //     $quantity = $each['so_luong'];
-                            //     $sql = "insert into order_product(order_id,product_id,quantity) values('$order_id','$product_id','$quantity')";
-                            //     mysqli_query($connect, $sql);
-                            // }
-                            // mysqli_close($connect);
-                            // unset($_SESSION['cart']);
-                            // header('location:../complete.php');
-                            // exit();
                         } else {
                             echo "<span style='color:red'>Thanh Toán Không Thành Công</span>";
                         }

@@ -2,7 +2,7 @@
 
 $name_receiver=$phone_number_receiver=$address_receiver="";
 if(isset($_POST['name_receiver'])){
-    $name_receive=$_POST['name_receiver'];
+    $name_receiver=$_POST['name_receiver'];
 }
 if(isset($_POST['phone_number_receiver'])){
     $phone_number_receiver=$_POST['phone_number_receiver'];
@@ -20,8 +20,9 @@ foreach($cart as $each){
 }
 $customer_id = $_SESSION['id'];
 $status = 0;
-$sql = "insert into orders(customer_id, name_receiver, phone_receiver, address_receiver, status, total_price)
-values ('$customer_id', '$name_receiver', '$phone_number_receiver', '$address_receiver', '$status', '$total_price')";
+$order = 'Thanh toán khi nhận hàng';
+$sql = "insert into orders(customer_id, name_receiver, phone_receiver, address_receiver, status, total_price,cart_payment)
+values ('$customer_id', '$name_receiver', '$phone_number_receiver', '$address_receiver', '$status', '$total_price','$order')";
 mysqli_query($connect,$sql);
 $sql = "select max(id) from orders where customer_id = '$customer_id'";
 $result = mysqli_query($connect,$sql);

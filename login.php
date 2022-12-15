@@ -26,7 +26,7 @@ if(isset($_SESSION['id'])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <?php include('css-libary.php') ?>
-    <title>SKINLELE.COM</title>
+    <title>shoplele.site</title>
 </head>
 
 <body>
@@ -37,17 +37,17 @@ if(isset($_SESSION['id'])) {
         <div class="row">
             <div class="col-sm-6">
                 <h2 style="font-size: 20px;font-family: 'Times New Roman', Times, serif;margin-bottom: 20px;">ĐĂNG NHẬP</h2>
-                <form method="POST" action="./component/process_login.php">
+                <form class="form" method="POST" action="./component/process_login.php">
                     <div class="form-group">
                         <label style="font-size: 18px;font-family: 'Times New Roman', Times, serif;margin-bottom: 20px;">Email:</label>
-                        <input style="height: 40px;width: 80%;font-size: 14px" type="email" class="form-control" name="email" placeholder="Nhập email...">
+                        <input style="height: 40px;width: 80%;font-size: 14px" type="email" class="form-control" name="email" placeholder="Nhập email..." data-rule-email="true" data-rule-minlength="11" data-msg-email="Vui lòng nhập email đúng.">
                     </div>
                     <div class="form-group">
                         <label style="font-size: 18px;font-family: 'Times New Roman', Times, serif;margin-bottom: 20px;">Mật khẩu:</label>
-                        <input style="height: 40px;width: 80%;font-size: 14px" type="password" class="form-control" name="password" placeholder="Nhập mật khẩu...">
+                        <input style="height: 40px;width: 80%;font-size: 14px" type="password" class="form-control" name="password" placeholder="Nhập mật khẩu..." data-rule-required="true" data-rule-minlength="3" data-msg-required="Vui Lòng nhập đúng mật khẩu.">
                     </div>
-                        <label style="font-size: 18px;font-family: 'Times New Roman', Times, serif;margin-bottom: 20px;">Nhớ mật khẩu</label>
-                        <input name="remember" type="checkbox">
+                    <label style="font-size: 18px;font-family: 'Times New Roman', Times, serif;margin-bottom: 20px;">Nhớ mật khẩu</label>
+                    <input name="remember" type="checkbox">
                     <br>
                     <button style="height: 50px;border-radius: 5px;" class="btn btn-default">Đăng Nhập</button>
                 </form>

@@ -47,9 +47,10 @@ include('../../admin/root/db/config.php')
                     <a href="productTable.php" class="nav-item nav-link"><i class="fas fa-weight-hanging"></i>Products</a>
                     <a href="tableOrders.php" class="nav-item nav-link"><i class="fas fa-shopping-basket"></i>Orders</a>
                     <a href="tableOrderDetail.php" class="nav-item nav-link"><i class="fas fa-user-check"></i>Orders Detail</a>
+                    <a href="tableVnpay.php" class="nav-item nav-link "><i class="fa fa-paypal"></i>Vn pay</a>
                     <a href="tableContact.php" class="nav-item nav-link"><i class="fas fa-phone"></i>Contact</a>
                     <a href="tableSign.php" class="nav-item nav-link"><i class="fas fa-user-alt"></i>Account</a>
-                    <a href="tableSign.php" class="nav-item nav-link"><i class="fas fa-blog"></i>View Website</a>
+                    <a href="../../index.php" class="nav-item nav-link"><i class="fas fa-blog"></i>View Website</a>
                 </div>
             </nav>
         </div>
@@ -168,41 +169,29 @@ include('../../admin/root/db/config.php')
                             <div id="calender"></div>
                         </div>
                     </div>
-                            <div class="d-flex align-items-center pt-2">
-                                <input class="form-check-input m-0" type="checkbox">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 align-items-center justify-content-between">
-                                        <span>Short task goes here...</span>
-                                        <button class="btn btn-sm"><i class="fa fa-times"></i></button>
-                                    </div>
-                                </div>
+                    <div class="d-flex align-items-center pt-2">
+                        <input class="form-check-input m-0" type="checkbox">
+                        <div class="w-100 ms-3">
+                            <div class="d-flex w-100 align-items-center justify-content-between">
+                                <span>Short task goes here...</span>
+                                <button class="btn btn-sm"><i class="fa fa-times"></i></button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Widgets End -->
         </div>
-        <!-- Content End -->
+    </div>
+    <!-- Widgets End -->
+    </div>
+    <!-- Content End -->
 
 
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/chart/chart.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/tempusdominus/js/moment.min.js"></script>
-    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <?php include('./jquery.php') ?>
 </body>
 
 </html>

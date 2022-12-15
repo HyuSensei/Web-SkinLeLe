@@ -3,7 +3,6 @@ require_once('./db/connect.php');
 $sql = "select * from order_product";
 $result = mysqli_query($connect, $sql);
 ?>
-<!-- <a href="../../../admin/root/orderDetail/create_order_Detail.php" style="float: right; background-color: #e28585;" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a> -->
 <div class="table-responsive">
     <table class="table">
         <thead>
@@ -25,7 +24,9 @@ $result = mysqli_query($connect, $sql);
                     </td>
                     <td><?php echo $value['quantity'] ?></td>
                     <td>
-                        <a href="./orderDetail/delete_order_detail.php?id=<?php echo $value['order_id'] ?>"><span class="fa fa-trash" style="color: #e28585;"></span></a>
+                        <form action="./orderDetail/code.php" method="POST" class="d-inline">
+                            <button type="submit" name="delete" value="<?php echo $value['order_id'] ?>" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
                     </td>
                 </tr>
             <?php endforeach ?>

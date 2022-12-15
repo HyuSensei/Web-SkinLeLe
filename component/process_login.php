@@ -25,6 +25,9 @@ if($number_row==1)
     $id=$each['id'];
     $_SESSION['id']=$id;
     $_SESSION['name']=$each['name'];
+    $_SESSION['email']=$each['email'];
+    $_SESSION['phone_number']=$each['phone_number'];
+    $_SESSION['address']=$each['address'];
     if($remember)
     {
         $token=uniqid('user_',true);

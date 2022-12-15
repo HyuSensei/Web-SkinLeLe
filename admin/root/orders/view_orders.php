@@ -16,6 +16,8 @@ $result = mysqli_query($connect, $sql);
                 <th>total_price</th>
                 <th>status</th>
                 <th>created_at</th>
+                <th>cart_payment</th>
+                <th>Xem</th>
                 <th>Sửa</th>
                 <th>Xóa</th>
             </tr>
@@ -45,14 +47,19 @@ $result = mysqli_query($connect, $sql);
                     <td>
                         <p><?php echo $value['created_at'] ?></p>
                     </td>
-                    <!-- <td>
-                        <a href="../../../admin/root/orders/read_orders.php?id=<?php echo $value['id'] ?>"><span class="fa fa-eye"></span></a>
-                    </td> -->
                     <td>
-                        <a href="./orders/update_order.php?id=<?php echo $value['id'] ?>"><span class="fa fa-pencil" style="color: #e28585;"></a>
+                        <p><?php echo $value['cart_payment'] ?></p>
                     </td>
                     <td>
-                        <a href="./orders/delete_order.php?id=<?php echo $value['id'] ?>"><span class="fa fa-trash" style="color: #e28585;"></span></a>
+                        <a href="./orders/view_order.php?id=<?php echo $value['id'] ?>"><span class="fa fa-eye" style="color: #e28585;"></span></a>
+                    </td>
+                    <td>
+                        <a href="./orders/edit_order.php?id=<?php echo $value['id'] ?>"><span class="fa fa-pencil" style="color: #e28585;"></a>
+                    </td>
+                    <td>
+                        <form action="./orders/code.php" method="POST" class="d-inline">
+                            <button type="submit" name="delete" value="<?php echo $value['id'] ?>" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
                     </td>
                 </tr>
             <?php endforeach ?>

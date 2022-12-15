@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Title Tag  -->
-    <title>SKINLELE.COM</title>
+    <title>shoplele.site</title>
     <?php include('css-libary.php') ?>
 </head>
 

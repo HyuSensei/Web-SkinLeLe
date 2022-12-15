@@ -2,7 +2,7 @@
 Template Name: Eshop
 Author Name: Naimur Rahman
 Author URI: http://www.wpthemesgrid.com/
-Description: SKINLELE.COM
+Description: shoplele.site
 Version:1.0
 ========================================*/
 /*======================================
@@ -554,7 +554,7 @@ Version:1.0
 .header .shopping .shopping-item {
 	position: absolute;
 	top: 68px;
-	right: 0;
+	right: 0px;
 	width: 300px;
 	background: #fff;
 	padding: 20px 25px;

@@ -2,7 +2,6 @@
 require_once('utils/utility.php');
 require_once('db/dbhelper.php');
 
-
 $id = getGet('id');
 $product = executeResult('select * from san_pham where id = ' . $id, true);
 if ($product == null) {
@@ -18,7 +17,7 @@ if ($product == null) {
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>SKINLELE.COM</title>
+    <title>shoplele.site</title>
     <?php include('css-libary.php') ?>
     <link rel="stylesheet" href="css/detail_product.css">
 
@@ -51,33 +50,14 @@ if ($product == null) {
                 <div class="product-dtl">
                     <div class="product-info">
                         <div class="product-name"><?= $product['ten_san'] ?></div>
-                        <!-- <div class="reviews-counter">
-                            <div class="rate">
-                                <input type="radio" id="star5" name="rate" value="5" checked />
-                                <label for="star5" title="text">5 stars</label>
-                                <input type="radio" id="star4" name="rate" value="4" checked />
-                                <label for="star4" title="text">4 stars</label>
-                                <input type="radio" id="star3" name="rate" value="3" checked />
-                                <label for="star3" title="text">3 stars</label>
-                                <input type="radio" id="star2" name="rate" value="2" />
-                                <label for="star2" title="text">2 stars</label>
-                                <input type="radio" id="star1" name="rate" value="1" />
-                                <label for="star1" title="text">1 star</label>
-                            </div>
-                            
-                        </div> -->
+                       
                         <div class="product-price-discount"><span style="color: #820813;"><?= $product['gia'] ?> đ</span><span style="color: #820813;" class="line-through"> - <?= $product['khuyen_mai'] ?> đ</span></div>
                     </div>
                     <p style="text-align: justify;margin-bottom: 20px;"><?= $product['mo_ta'] ?></p>
                     <div class="product-count">
-                        <!-- <label for="size">Số lượng</label>
-                        <form action="#" class="display-flex">
-                            <a class="qtyminus">-</a>
-                            <input type="text" name="quantity" value="1" class="qty">
-                            <a class="qtyplus">+</a>
-                        </form> -->
-                        <a style="width: 100%;" href="component/add_to_cart_detail.php?id=<?php echo $product['id'] ?>"> <button style="background-color: #5a90e5;width: 38%;" type="button" class="btn btn-primary" >Thêm vào giỏ hàng</button></a>
-                        <!-- <div class="cart mt-4 align-items-center"> <button class="btn btn-danger text-uppercase mr-2 px-4" onclick="addToCart(<?= $id ?>)">Thêm vào giỏ hàng</button></div> -->
+                      
+                        <a style="width: 100%;" href="component/add_to_cart.php?id=<?php echo $product['id'] ?>"> <button style="background-color: #8f212b;width: 38%;" type="button" class="btn btn-primary" ><i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ hàng</button></a>
+                       
                     </div>
                 </div>
             </div>

@@ -13,6 +13,40 @@ session_start();
         background: #e28585;
         border-radius: 30px;
     }
+    form.searchs input[type=text] {
+	padding: 10px;
+	font-size: 17px;
+	border: 1px solid grey;
+	float: left;
+	width: 80%;
+	background: #f1f1f1;
+}
+
+form.searchs button {
+	position: absolute;
+	left: 92%;
+	top: -2%;
+	float: right;
+	width: 10%;
+	padding: 15px;
+	background: white;
+	color: black;
+	font-size: 17px;
+	border: 0.3px solid #6666;
+	/* Prevent double borders */
+	cursor: pointer;
+}
+
+form.searchs button:hover {
+	background: #666;
+}
+
+/* Clear floats */
+form.searchs::after {
+	content: "";
+	clear: both;
+	display: table;
+}
 </style>
 <!-- Header -->
 <header class="header shop">
@@ -58,22 +92,6 @@ session_start();
                         <a href="index.php"><img src="./images/logoo.png" alt="logo" style="max-width: 60%;"></a>
                     </div>
                     <div class="mobile-nav"></div>
-                    <!--/ End Logo -->
-
-                    <!-- <div class="search-top">
-                        <div class="top-search"><a href="#0"><i class="ti-search"></i></a></div>
-                        
-                        <div class="search-top">
-                            <form class="search-form">
-                                <input type="text" placeholder="Nhập..." name="search" id="live_search">
-                                
-                                <button value="search" type="submit"><i class="ti-search"></i></button>
-                            </form>
-                        </div>
-                        
-                    </div>
-                    
-                    <div class="mobile-nav"></div> -->
                 </div>
                 <div class="col-lg-8 col-md-7 col-12" style="margin-top: 40px;">
                     <div class="search-bar-top">
@@ -81,9 +99,15 @@ session_start();
                             <select>
                                 <option selected="selected">All</option>
                             </select>
-                                <input name="live_search" id="live_search" autocomplete="off" placeholder="Nhập thông tin tìm kiếm..." type="text">
-                              
-                            <div class="shopping-item" style="margin-top: 10px;width: 610px;position: absolute;z-index: 100;background-color: #fff;" id="search_result"></div>
+                            <form class="searchs" action="search.php" method="GET">
+                                <!-- <input name="live_search " id="live_search" placeholder="Nhập thông tin tìm kiếm..." type="text"> -->
+                                <input class="search_product" name="live_search" id="live_search" type="search" placeholder="Nhập thông tin tìm kiếm..." required value="<?php if (isset($_GET['live_search'])) {
+                                                                                                                                                                                echo $_GET['live_search'];
+                                                                                                                                                                            } ?>" placeholder="live_search">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                                <div style="margin-top: 10px;width: 580px;position: absolute;z-index: 100;background-color: #fff; margin-left: -150px;" id="search_result"></div>
+
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -143,45 +167,74 @@ session_start();
         </div>
     </div>
     <!-- Header Inner -->
-   
-        <div class="header-inner" style="background-color: #ffff;margin-bottom: 30px;">
-            <div class="container">
-                <div class="cat-nav-head">
-                    <!-- <div class="row">
+
+    <div class="header-inner" style="background-color: #ffff;margin-bottom: 30px;">
+        <div class="container">
+            <div class="cat-nav-head">
+                <!-- <div class="row">
                     <div class="col-12"> -->
-                    <div class="menu-area">
-                        <!-- Main Menu -->
-                        <nav class="navbar navbar-expand-lg">
-                            <div class="navbar-collapse">
-                                <div class="nav-inner" style="width: 100%;">
-                                    <ul class="nav main-menu menu navbar-nav" style="display: flex;
+                <div class="menu-area">
+                    <!-- Main Menu -->
+                    <nav class="navbar navbar-expand-lg">
+                        <div class="navbar-collapse">
+                            <div class="nav-inner" style="width: 100%;">
+                                <ul class="nav main-menu menu navbar-nav" style="display: flex;
                                                                                         align-items: center;
                                                                                         justify-content: center;
                                                                                         width: 100%;">
-                                        <li><a style="color:gray ;" href="index.php">Trang Chủ</a></li>
-                                        <li><a style="color:gray ;" href="#">Sản Phẩm<i class="ti-angle-down"></i></a>
-                                            <ul class="dropdown">
-                                                <li><a style="color:gray ;" href="product_1.php">Chăm Sóc Da</a></li>
-                                                <li><a style="color:gray ;" href="product_2.php">Trang Điểm</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a style="color:gray ;" href="#">Cửa Hàng<i class="ti-angle-down"></i><span class="new">New</span></a>
-                                            <ul class="dropdown">
-                                                <li><a style="color:gray ;" href="view_cart.php">Giỏ Hàng</a></li>
-                                                <li><a style="color:gray ;" href="">Thanh Toán</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a style="color:gray ;" href="contact.php">Liên Hệ</a></li>
-                                    </ul>
-                                </div>
+                                    <li><a style="color:gray ;" href="index.php">Trang Chủ</a></li>
+                                    <li><a style="color:gray ;" href="#">Sản Phẩm<i class="ti-angle-down"></i></a>
+                                        <ul class="dropdown">
+                                            <li><a style="color:gray ;" href="product_1.php">Chăm Sóc Da</a></li>
+                                            <li><a style="color:gray ;" href="product_2.php">Trang Điểm</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a style="color:gray ;" href="#">Cửa Hàng<i class="ti-angle-down"></i><span class="new">New</span></a>
+                                        <ul class="dropdown">
+                                            <li><a style="color:gray ;" href="view_cart.php">Giỏ Hàng</a></li>
+                                            <li><a style="color:gray ;" href="">Thanh Toán</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a style="color:gray ;" href="contact.php">Liên Hệ</a></li>
+                                </ul>
                             </div>
-                        </nav>
-                        <!--/ End Main Menu -->
-                    </div>
-                    <!-- </div>
-                </div> -->
+                        </div>
+                    </nav>
+                    <!--/ End Main Menu -->
                 </div>
+                <!-- </div>
+                </div> -->
             </div>
         </div>
+    </div>
     <!--/ End Header Inner -->
 </header>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#live_search").keyup(function () {
+                var query = $(this).val();
+                if (query != "") {
+                    $.ajax({
+                        url: './component/ajax-live-search.php',
+                        method: 'POST',
+                        data: {
+                            query: query
+                        },
+                        success: function (data) {
+                            $('#search_result').html(data);
+                            $('#search_result').css('display', 'block');
+                            $("#live_search").focusout(function () {
+                                $('#search_result').css('display', 'none');
+                            });
+                            $("#live_search").focusin(function () {
+                                $('#search_result').css('display', 'block');
+                            });
+                        }
+                    });
+                } else {
+                    $('#search_result').css('display', 'none');
+                }
+            });
+        });
+    </script>

@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Title Tag  -->
-    <title>SKINLELE.COM</title>
+    <title>shoplele.site</title>
     <?php include('css-libary.php') ?>
 </head>
 <style>
@@ -38,17 +38,17 @@
                         <ul style="margin-top: 20px;">
                             <li><a style="font-weight: bold;" href="">Chăm Sóc Da</a>
                                 <ul style="margin-top: 15px;">
-                                    <li style="margin-top: 15px;"><a href="">Giải Pháp Làn Da</a></li>
-                                    <li style="margin-top: 15px;"><a href="">Chăm Sóc Cơ Thể</a></li>
-                                    <li style="margin-top: 15px;"><a href="">Quy Trình Dưỡng Da</a></li>
-                                    <li style="margin-top: 15px;"><a href="">Làm Đẹp</a></li>
+                                    <li style="margin-top: 15px;"><a href="productt_giaiphaplanda.php">Giải Pháp Làn Da</a></li>
+                                    <li style="margin-top: 15px;"><a href="productt_chamsoccothe.php">Chăm Sóc Cơ Thể</a></li>
+                                    <li style="margin-top: 15px;"><a href="productt_quytrinhduongda.php">Quy Trình Dưỡng Da</a></li>
+                                    <li style="margin-top: 15px;"><a href="productt_lamdep.php">Làm Đẹp</a></li>
                                 </ul>
                             </li>
-                            <li style="margin-top: 15px;"><a style="font-weight: bold;" href=""><span></span>Trang Điểm</a>
+                            <li style="margin-top: 15px;"><a href=""><span></span>Trang Điểm</a>
                                 <ul>
-                                    <li style="margin-top: 15px;"><a href="">Mắt</a></li>
-                                    <li style="margin-top: 15px;"><a href="">Mặt</a></li>
-                                    <li style="margin-top: 15px;"><a href="">Môi</a></li>
+                                    <li style="margin-top: 15px;"><a href="productt_mat.php">Mắt</a></li>
+                                    <li style="margin-top: 15px;"><a href="productt_matt.php">Mặt</a></li>
+                                    <li style="margin-top: 15px;"><a href="productt_moi.php">Môi</a></li>
 
                                 </ul>
                             </li>

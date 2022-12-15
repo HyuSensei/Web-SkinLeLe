@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Title Tag  -->
-    <title>SKINLELE.COM</title>
+    <title>shoplele.site</title>
     <?php include('css-libary.php') ?>
 </head>
 
@@ -49,6 +49,7 @@
                         </tr>
                     </thead>
                     <tbody>
+                   
                         <?php if (is_array($cart) || is_object($cart)) foreach ($cart as $id => $each) : ?>
                             <tr>
                                 <td><img src="<?php echo $each['anh'] ?>" alt="" style="width: 130px;"></td>
@@ -83,6 +84,7 @@
                                 </td>
                             </tr>
                         <?php endforeach ?>
+                     
                     </tbody>
                 </table>
             </div>
@@ -92,18 +94,18 @@
             <br>
         </div>
         <div class="container">
-            <form method="POST" action="./component/process_order.php">
-            <div class="form-group">
+        <form class="form" method="POST" action="./component/process_order.php">
+                <div class="form-group">
                     <label style="font-size: 18px;font-family: 'Times New Roman', Times, serif;">HỌ VÀ TÊN NGƯỜI NHẬN</label>
-                    <input style="font-size: 14px;width: 60%;" type="text" class="form-control" placeholder="Nhập họ tên" name="name_receiver">
+                    <input style="font-size: 14px;width: 60%;" type="text" class="form-control" data-rule-required="true" data-rule-minlength="6" data-msg-required="Vui lòng nhập họ tên." placeholder="Nhập họ tên" name="name_receiver">
                 </div>
                 <div class="form-group">
                     <label style="font-size: 18px;font-family: 'Times New Roman', Times, serif;">SỐ ĐIỆN THOẠI</label>
-                    <input style="font-size: 14px;width: 60%;" type="text" class="form-control" name="phone_number_receiver" placeholder="Nhập số điện thoại">
+                    <input style="font-size: 14px;width: 60%;" type="text" class="form-control" name="phone_number_receiver" data-rule-required="true" data-rule-minlength="10" data-msg-required="Vui lòng nhập số điện thoại." placeholder="Nhập số điện thoại">
                 </div>
                 <div class="form-group">
                     <label style="font-size: 18px;font-family: 'Times New Roman', Times, serif;">ĐỊA CHỈ NHẬN HÀNG</label>
-                    <input style="font-size: 14px;width: 60%;" type="text" class="form-control" placeholder="Nhập địa chỉ" name="address_receiver">
+                    <input style="font-size: 14px;width: 60%;" type="text" class="form-control" placeholder="Nhập địa chỉ" name="address_receiver" data-rule-required="true" data-rule-minlength="6" data-msg-required="Vui lòng nhập địa chỉ.">
                 </div>
                 <button class="btn btn-success">Đặt Hàng</button>
             </form>

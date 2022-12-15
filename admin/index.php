@@ -61,15 +61,15 @@
                 <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
                     <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">
                         <h3 style="text-align: center;">Đăng Nhập</h3>
-                        <form method="POST" action="process_loginadmin.php">
+                        <form class="form" method="POST" action="process_loginadmin.php">
                             <div class="form-group">
                                 <label style="font-size: 18px;font-family: 'Times New Roman', Times, serif;margin-bottom: 20px;">Email:</label>
-                                <input style="height: 40px;width: 100%;font-size: 14px" type="email" class="form-control" name="email" placeholder="Nhập email...">
+                                <input style="height: 40px;width: 100%;font-size: 14px" type="email" class="form-control" name="email" placeholder="Nhập email..." data-rule-email="true" data-rule-minlength="11" data-msg-email="Vui lòng nhập email đúng.">
                             </div>
                             <br>
                             <div class="form-group">
                                 <label style="font-size: 18px;font-family: 'Times New Roman', Times, serif;margin-bottom: 20px;">Mật khẩu:</label>
-                                <input style="height: 40px;width: 100%;font-size: 14px" type="password" class="form-control" name="password" placeholder="Nhập mật khẩu...">
+                                <input style="height: 40px;width: 100%;font-size: 14px" type="password" class="form-control" name="password" placeholder="Nhập mật khẩu..." data-rule-required="true" data-rule-minlength="3" data-msg-required="Vui Lòng nhập đúng mật khẩu.">
                             </div>
                             <br>
                             <button style="height: 50px;border-radius: 5px;background-color: #5a90e5;color: #ffff;width: 80%;margin-left: 32px;" class="btn btn-default">Đăng Nhập</button>
@@ -94,6 +94,18 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="../js/jquery.validate.js"></script>
+
+    <script>
+        $(document).ready(function() {
+
+            $(".form").validate();
+        })
+    </script>
 </body>
 
 </html>

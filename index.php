@@ -8,8 +8,10 @@
     <meta name='copyright' content=''>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="jquery-1.12.0.min.js" type="text/javascript"></script>
+    <script src="script.js"></script>
     <!-- Title Tag  -->
-    <title>SKINLELE.COM</title>
+    <title>shoplele.site</title>
     <?php include('css-libary.php') ?>
 
 </head>
@@ -55,6 +57,26 @@
             <div class="col-sm-4"><a href="product_1.php"><img style="border-radius: 5px;" src="./images/banner6.webp" alt=""></a></div>
             <div class="col-sm-4"><a href="product_2.php"><img style="border-radius: 5px;" src="./images/banner7.webp" alt=""></a></div>
             <div class="col-sm-4"><a href="product_1.php"><img style="border-radius: 5px;" src="./images/banner8.webp" alt=""></a></div>
+        </div>
+    </div>
+    <div class="product-area section" style="margin-top: -30px;">
+        <div class="container">
+            <p style="font-size: 25px;font-weight: bold;font-family: 'Times New Roman', Times, serif;color: #c05353;margin-bottom: 20px;">SẢN PHẨM KHÁC</p>
+            <div class="row" style="margin-top: -30px;">
+                <div class="col-12">
+                    <div class="product-info">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="man" role="tabpanel">
+                                <div class="tab-single">
+                                    <div class="row">
+                                        <?php include('./component/product_other.php') ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="container" style="margin-top: 40px;">
@@ -121,60 +143,10 @@
             </div>
         </div>
     </section>
-    <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="ti-close" aria-hidden="true"></span></button>
-                </div>
-                <div class="modal-body">
-                    <div class="row no-gutters">
-                        <div class="col-lg-6 offset-lg-3 col-12">
-                            <h4 style="margin-top:100px;font-size:14px; font-weight:500; color:#e28585; display:block; margin-bottom:5px;">Eshop Free Lite</h4>
-                            <h3 style="font-size:30px;color:#333;">Currently You are using free lite Version of Eshop.<h3>
-                                    <p style="display:block; margin-top:20px; color:#888; font-size:14px; font-weight:400;">Please, purchase full version of the template to get all pages, features and commercial license</p>
-                                    <div class="button" style="margin-top:30px;">
-                                        <a href="https://wpthemesgrid.com/downloads/eshop-ecommerce-html5-template/" target="_blank" class="btn" style="color:#fff;">Buy Now!</a>
-                                    </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
     <?php
     include 'component/footer.php'
     ?>
     <?php include('jquery.php') ?>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("#live_search").keyup(function () {
-                var query = $(this).val();
-                if (query != "") {
-                    $.ajax({
-                        url: './component/ajax-live-search.php',
-                        method: 'POST',
-                        data: {
-                            query: query
-                        },
-                        success: function (data) {
-                            $('#search_result').html(data);
-                            $('#search_result').css('display', 'block');
-                            $("#live_search").focusout(function () {
-                                $('#search_result').css('display', 'none');
-                            });
-                            $("#live_search").focusin(function () {
-                                $('#search_result').css('display', 'block');
-                            });
-                        }
-                    });
-                } else {
-                    $('#search_result').css('display', 'none');
-                }
-            });
-        });
-    </script>
 </body>
 
 </html>

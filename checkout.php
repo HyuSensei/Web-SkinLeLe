@@ -1,10 +1,21 @@
+<?php
+    $cart = "";
+    $total = 0;
+    if (isset($_SESSION['cart'])) {
+        $cart = $_SESSION['cart'];
+    }
+    if (is_array($cart) || is_object($cart)) foreach ($cart as $id => $each) : 
+            $sum = $each['gia'] * $each['so_luong'];
+            $total += $sum;
+     endforeach 
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SKINLELE.COM</title>
+    <title>shoplele.site</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 
@@ -71,8 +82,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label style="font-size: 18px;font-family: 'Times New Roman', Times, serif;">TỔNG TIỀN</label>
-                    <div></div>
+                    <label style="font-size: 18px;font-family: 'Times New Roman', Times, serif;color: #820813;">TỔNG TIỀN: <?php echo $total ?>đ</label>
                 </div>
                 <button class="btn btn-success" name="redirect" id="redirect" style="margin-bottom: 10px;">THANH TOÁN</button>
             </form>

@@ -50,7 +50,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <?php if (isset($_SESSION['id'])) { ?>
+                  
                         <?php if (is_array($cart) || is_object($cart)) foreach ($cart as $id => $each): ?>
                             <tr>
                                 <td><img src="<?php echo $each['anh'] ?>" alt="" style="width: 130px;"></td>
@@ -85,7 +85,7 @@
                                 </td>
                             </tr>
                         <?php endforeach ?>
-                        <?php }?>
+                      
                     </tbody>
                 </table>
             </div>

@@ -58,7 +58,7 @@ session_start();
                                 <input type="text" name="token" class="form-control">
                             </div>
                             <div class="mb-3">
-                                <button type="submit" name="save" class="btn btn-primary">Save Student</button>
+                                <button type="submit" name="save" class="btn btn-primary">Save value</button>
                             </div>
 
                         </form>

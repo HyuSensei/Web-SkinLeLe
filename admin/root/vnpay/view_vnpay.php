@@ -62,7 +62,7 @@ $result = mysqli_query($connect, $sql);
                         <a href="./vnpay/edit.php?id_vnpay=<?php echo $value['id_vnpay'] ?>"><span class="fa fa-pencil" style="color: #e28585;"></a>
                     </td>
                     <td>
-                        <form action="./orders/code.php" method="POST" class="d-inline">
+                        <form action="./vnpay/code.php" method="POST" class="d-inline">
                             <button type="submit" name="delete" value="<?php echo $value['id_vnpay'] ?>" class="btn btn-danger btn-sm">Delete</button>
                         </form>
                     </td>

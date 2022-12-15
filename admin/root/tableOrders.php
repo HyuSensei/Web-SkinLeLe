@@ -1,5 +1,5 @@
 <?php
-require_once('../check_admin_login.php');
+session_start();
 include('../../admin/root/db/config.php')
 ?>
 
@@ -162,9 +162,7 @@ include('../../admin/root/db/config.php')
             <!-- Table End -->
 
 
-            <!-- Footer Start -->
-            
-            <!-- Footer End -->
+            <!-- -->
         </div>
         <!-- Content End -->
 

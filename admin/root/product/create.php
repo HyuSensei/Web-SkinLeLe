@@ -26,7 +26,7 @@ session_start();
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Student Add
+                        <h4>value Add
                             <a href="../productTable.php" class="btn btn-danger float-end">BACK</a>
                         </h4>
                     </div>
@@ -58,7 +58,7 @@ session_start();
                                 <input type="text" name="danh_muc" class="form-control" data-rule-required="true" data-rule-minlength="3" data-msg-required="Please enter danh muc.">
                             </div>
                             <div class="mb-3">
-                                <button type="submit" name="save" class="btn btn-primary">Save Student</button>
+                                <button type="submit" name="save" class="btn btn-primary">Save value</button>
                             </div>
 
                         </form>

@@ -27,7 +27,7 @@ require '../db/connect.php';
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Student Edit
+                        <h4>value Edit
                             <a href="../productTable.php" class="btn btn-danger float-end">BACK</a>
                         </h4>
                     </div>
@@ -40,38 +40,38 @@ require '../db/connect.php';
                             $query_run = mysqli_query($connect, $query);
 
                             if (mysqli_num_rows($query_run) > 0) {
-                                $student = mysqli_fetch_array($query_run);
+                                $value = mysqli_fetch_array($query_run);
                         ?>
                                 <form action="code.php" method="POST">
-                                    <input type="hidden" name="id" value="<?= $student['id']; ?>">
+                                    <input type="hidden" name="id" value="<?= $value['id']; ?>">
 
                                     <div class="mb-3">
                                         <label> ten_san</label>
-                                        <input type="text" name="ten_san" value="<?= $student['ten_san']; ?>" class="form-control">
+                                        <input type="text" name="ten_san" value="<?= $value['ten_san']; ?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
                                         <label> Email</label>
-                                        <input type="text" name="mo_ta" value="<?= $student['mo_ta']; ?>" class="form-control">
+                                        <input type="text" name="mo_ta" value="<?= $value['mo_ta']; ?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
                                         <label> Anh</label>
-                                        <input type="text" name="anh" value="<?= $student['anh']; ?>" class="form-control">
+                                        <input type="text" name="anh" value="<?= $value['anh']; ?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
                                         <label> gia</label>
-                                        <input type="text" name="gia" value="<?= $student['gia']; ?>" class="form-control">
+                                        <input type="text" name="gia" value="<?= $value['gia']; ?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
                                         <label> khuyen_mai</label>
-                                        <input type="text" name="khuyen_mai" value="<?= $student['khuyen_mai']; ?>" class="form-control">
+                                        <input type="text" name="khuyen_mai" value="<?= $value['khuyen_mai']; ?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
                                         <label> danh_muc</label>
-                                        <input type="text" name="danh_muc" value="<?= $student['danh_muc']; ?>" class="form-control">
+                                        <input type="text" name="danh_muc" value="<?= $value['danh_muc']; ?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
                                         <button type="submit" name="update" class="btn btn-primary">
-                                            Update Student
+                                            Update value
                                         </button>
                                     </div>
 

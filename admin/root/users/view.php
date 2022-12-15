@@ -23,7 +23,7 @@ require '../db/connect.php';
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Student View Details
+                        <h4>value View Details
                             <a href="../productTable.php" class="btn btn-danger float-end">BACK</a>
                         </h4>
                     </div>

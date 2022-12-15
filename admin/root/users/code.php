@@ -9,11 +9,11 @@ if (isset($_POST['delete'])) {
     $query_run = mysqli_query($connect, $query);
 
     if ($query_run) {
-        $_SESSION['message'] = "Student Deleted Successfully";
+        $_SESSION['message'] = "value Deleted Successfully";
         header("Location: ../tableSign.php");
         exit(0);
     } else {
-        $_SESSION['message'] = "Student Not Deleted";
+        $_SESSION['message'] = "value Not Deleted";
         header("Location: ../tableSign.php");
         exit(0);
     }
@@ -33,11 +33,11 @@ if (isset($_POST['update'])) {
     $query_run = mysqli_query($connect, $query);
 
     if ($query_run) {
-        $_SESSION['message'] = "Student Updated Successfully";
+        $_SESSION['message'] = "value Updated Successfully";
         header("Location: ../tableSign.php");
         exit(0);
     } else {
-        $_SESSION['message'] = "Student Not Updated";
+        $_SESSION['message'] = "value Not Updated";
         header("Location: ../tableSign.php");
         exit(0);
     }
@@ -56,11 +56,11 @@ if (isset($_POST['save'])) {
 
     $query_run = mysqli_query($connect, $query);
     if ($query_run) {
-        $_SESSION['message'] = "Student Created Successfully";
+        $_SESSION['message'] = "value Created Successfully";
         header("Location: create.php");
         exit(0);
     } else {
-        $_SESSION['message'] = "Student Not Created";
+        $_SESSION['message'] = "value Not Created";
         header("Location: create.php");
         exit(0);
     }

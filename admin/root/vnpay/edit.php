@@ -27,7 +27,7 @@ require '../db/connect.php';
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Student Edit
+                        <h4>value Edit
                             <a href="../tableVnpay.php" class="btn btn-danger float-end">BACK</a>
                         </h4>
                     </div>
@@ -85,7 +85,7 @@ require '../db/connect.php';
 
                                     <div class="mb-3">
                                         <button type="submit" name="update" class="btn btn-primary">
-                                            Update Student
+                                            Update value
                                         </button>
                                     </div>
 

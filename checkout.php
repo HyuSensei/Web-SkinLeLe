@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $cart = "";
     $total = 0;
     if (isset($_SESSION['cart'])) {
@@ -7,7 +8,7 @@
     if (is_array($cart) || is_object($cart)) foreach ($cart as $id => $each) : 
             $sum = $each['gia'] * $each['so_luong'];
             $total += $sum;
-     endforeach 
+    endforeach;
     ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -82,7 +83,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label style="font-size: 18px;font-family: 'Times New Roman', Times, serif;color: #820813;">TỔNG TIỀN: <?php echo $total ?>đ</label>
+                    <label style="font-size: 18px;font-family: 'Times New Roman', Times, serif;color: #820813;">TỔNG TIỀN: <?php echo $total ?> đ</label>
                 </div>
                 <button class="btn btn-success" name="redirect" id="redirect" style="margin-bottom: 10px;">THANH TOÁN</button>
             </form>

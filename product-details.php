@@ -8,7 +8,14 @@ if ($product == null) {
     header('Location: index.php');
     die;
 }
-
+// require_once('db/connect.php');
+// $id = "";
+// if(isset($_GET['id'])){
+//     $id = $_GET['id'];
+// }
+// $sql = "select * from san_pham where id='$id'";
+// $result = mysqli_query($connect, $sql);
+// $each=mysqli_fetch_array($result);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,14 +57,13 @@ if ($product == null) {
                 <div class="product-dtl">
                     <div class="product-info">
                         <div class="product-name"><?= $product['ten_san'] ?></div>
-                       
                         <div class="product-price-discount"><span style="color: #820813;"><?= $product['gia'] ?> đ</span><span style="color: #820813;" class="line-through"> - <?= $product['khuyen_mai'] ?> đ</span></div>
                     </div>
                     <p style="text-align: justify;margin-bottom: 20px;"><?= $product['mo_ta'] ?></p>
-                    <div class="product-count">
-                      
-                        <a style="width: 100%;" href="component/add_to_cart.php?id=<?php echo $product['id'] ?>"> <button style="background-color: #8f212b;width: 38%;" type="button" class="btn btn-primary" ><i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ hàng</button></a>
-                       
+                    <div data-id="<?php echo $product['id'] ?>" class="button-head">
+                        <div style="width: 100%; height: 48px;" class="product-action-2">
+                        <a style="width: 100%;" href=""><button style="background-color: #8f212b;width: 50%;" type="button" class="btn btn-primary" ><i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ hàng</button></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -82,18 +88,6 @@ if ($product == null) {
             </div>
     </div>
     </div>
-    
-    <!-- <script type="text/JavaScript">
-        function addToCart(id) {
-        $.post('./api/cookie.php', {
-            'action' : 'add',
-            'id' : id,
-            'num' : 1
-        }, function(data) {
-            location.reload()
-        })
-    } -->
-    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="	sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

@@ -35,9 +35,12 @@ if($number_row==1)
         mysqli_query($connect,$sql);
         setcookie('remember',$token,time()+60*60*24*30);         
     }
-    header('location:../index.php');
-    exit();
+    echo "<script type='text/javascript'>alert('Đăng nhập thành công')
+    window.location.replace('../index.php');
+    </script>";
 }else{
-	echo "Đăng nhập sai rồi";
+    echo "<script type='text/javascript'>alert('Kiểm tra lại thông tin đăng nhập')
+    window.location.replace('../login.php');
+    </script>";
 }
  

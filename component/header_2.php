@@ -115,10 +115,9 @@ form.searchs::after {
                     <div class="right-bar">
                         <!-- Search Form -->
                         <div class="sinlge-bar">
-                            <a href="#" class="single-icon"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                        </div>
-                        <div class="sinlge-bar">
-                            <a href="#" class="single-icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+                            <?php if (isset($_SESSION['id'])) { ?>
+                                <a href="user.php" class="single-icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+                            <?php } ?>
                         </div>
                         <div class="sinlge-bar shopping">
                             <?php
@@ -209,7 +208,7 @@ form.searchs::after {
     </div>
     <!--/ End Header Inner -->
 </header>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $("#live_search").keyup(function () {
@@ -236,5 +235,22 @@ form.searchs::after {
                     $('#search_result').css('display', 'none');
                 }
             });
+            $(".button-head").click(function(){
+                let id=$(this).data('id');
+                // alert ('Sản phẩm '+ id);
+                $.ajax({
+                    type: "GET",
+                    url: "./component/add_to_cart.php",
+                    data: {id},
+                    // dataType: "dataType",
+                })
+                .done(function(response){
+                    if(response==1){
+                        alert ('Thêm giỏ hàng thành công');
+                    }else{
+                        alert ('Thêm giỏ hàng thất bại');
+                    }
+                });
+            })
         });
     </script>

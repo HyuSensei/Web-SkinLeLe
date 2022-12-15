@@ -1,5 +1,4 @@
 <?php
-//session_start();
 if (isset($_COOKIE['remember'])) {
     $token = $_COOKIE['remember'];
     require_once('db/connect.php');

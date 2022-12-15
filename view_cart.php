@@ -1,3 +1,10 @@
+<?php
+    $cart = "";
+    $total = 0;
+    if (isset($_SESSION['cart'])) {
+        $cart = $_SESSION['cart'];
+    }
+    ?>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -15,13 +22,7 @@
 
 <body class="js">
     <?php include 'component/header_2.php'; ?>
-    <?php
-    $cart = "";
-    $total = 0;
-    if (isset($_SESSION['cart'])) {
-        $cart = $_SESSION['cart'];
-    }
-    ?>
+
     <!-- Breadcrumbs -->
     <div class="breadcrumbs">
         <div class="container">
@@ -49,8 +50,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                   
-                        <?php if (is_array($cart) || is_object($cart)) foreach ($cart as $id => $each) : ?>
+                    <?php if (isset($_SESSION['id'])) { ?>
+                        <?php if (is_array($cart) || is_object($cart)) foreach ($cart as $id => $each): ?>
                             <tr>
                                 <td><img src="<?php echo $each['anh'] ?>" alt="" style="width: 130px;"></td>
                                 <td>
@@ -71,9 +72,9 @@
                                 <td>
                                     <p style="color: #820813;">
                                         <?php
-                                        $sum = $each['gia'] * $each['so_luong'];
-                                        $total += $sum;
-                                        echo $sum . 'đ';
+                                $sum = $each['gia'] * $each['so_luong'];
+                                $total += $sum;
+                                echo $sum . 'đ';
                                         ?>
                                     </p>
                                 </td>
@@ -84,7 +85,7 @@
                                 </td>
                             </tr>
                         <?php endforeach ?>
-                     
+                        <?php }?>
                     </tbody>
                 </table>
             </div>
@@ -94,6 +95,7 @@
             <br>
         </div>
         <div class="container">
+        <?php if ($total > 0) { ?>
         <form class="form" method="POST" action="./component/process_order.php">
                 <div class="form-group">
                     <label style="font-size: 18px;font-family: 'Times New Roman', Times, serif;">HỌ VÀ TÊN NGƯỜI NHẬN</label>
@@ -110,6 +112,9 @@
                 <button class="btn btn-success">Đặt Hàng</button>
             </form>
             <a href="checkout.php"><button style="margin-top: -74px;margin-left: 170px;" class="btn btn-success">Thanh Toán</button></a>
+            <?php } else { ?>
+                <p style="font-size: 20px;font-weight: bold;text-align: center;">Chưa có sản phẩm trong giỏi hàng</p>
+            <?php } ?>    
         </div>
     </div>
     <!-- Start Shop Services Area  -->

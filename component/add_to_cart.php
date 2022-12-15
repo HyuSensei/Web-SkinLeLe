@@ -1,4 +1,5 @@
 <?php
+try {
     session_start();
     $id="";
     if(isset($_GET['id']))
@@ -15,10 +16,13 @@
         $_SESSION['cart'][$id]['anh']=$each['anh'];
         $_SESSION['cart'][$id]['gia']=$each['gia'];
         $_SESSION['cart'][$id]['so_luong']=1;
-        
     }else{
         $_SESSION['cart'][$id]['so_luong']++;
     }
-    header('location:../index.php');
-    exit();
+    echo 1;
+} catch (Throwable $e) {
+    echo $e->getMessage();
+}
+    // header('location:../index.php');
+    // exit();
  ?>

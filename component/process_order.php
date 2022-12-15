@@ -18,6 +18,7 @@ $total_price = 0;
 foreach($cart as $each){
 	$total_price +=  $each['gia']*$each['so_luong'];
 }
+
 $customer_id = $_SESSION['id'];
 $status = 0;
 $order = 'Thanh toán khi nhận hàng';
@@ -33,7 +34,8 @@ foreach($cart as $product_id => $each){
         values('$order_id','$product_id','$quantity')";
         mysqli_query($connect,$sql);
 }
-mysqli_close($connect);
 unset($_SESSION['cart']);
+mysqli_close($connect);
 header('location:../complete.php');
 exit();
+
